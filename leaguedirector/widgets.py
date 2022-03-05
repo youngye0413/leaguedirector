@@ -384,6 +384,7 @@ class ColorInput(QWidget):
             'r' : float(self.r.value()) / 255,
             'g' : float(self.g.value()) / 255,
             'b' : float(self.b.value()) / 255,
+            'b' : float(self.b.value()) / 255,
             'a' : float(self.a.value()) / 255
         }
 

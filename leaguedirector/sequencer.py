@@ -440,7 +440,7 @@ class SequenceSelectedView(QWidget):
         self.time = FloatInput()
         self.blend = QComboBox()
         self.value = HBoxWidget()
-        self.valueLabel = QLabel('Multiple Selected')
+        self.valueLabel = QLabel('多选')
         self.valueFloat = FloatInput()
         self.valueBool = BooleanInput()
         self.valueVector = VectorInput()
@@ -460,9 +460,12 @@ class SequenceSelectedView(QWidget):
         self.blendHelp.clicked.connect(self.openBlendHelp)
 
         self.form.addRow('', self.label)
-        self.form.addRow('Time', self.time)
-        self.form.addRow('Blend', HBoxWidget(self.blend, self.blendHelp))
-        self.form.addRow('Value', self.value)
+        self.form.addRow('时间', self.time)
+        self.form.addRow('帧模式', HBoxWidget(self.blend, self.blendHelp))
+        """
+        由于关键帧模式blend直接调用了库，无法对名词进行汉化，后续版本尽量添加翻译
+        """
+        self.form.addRow('参数', self.value)
         
         self.time.valueChanged.connect(self.updateTime)
         self.valueFloat.valueChanged.connect(self.updateValue)
@@ -480,7 +483,7 @@ class SequenceSelectedView(QWidget):
         self.time.setRange(0, self.api.playback.length)
 
         blending = list(set([key.blend for key in selected]))
-        self.label.setText("{} keyframes selected".format(len(selected)))
+        self.label.setText("已选择{}个关键帧".format(len(selected)))
         if len(blending) == 1:
             self.blend.setCurrentText(blending[0])
         else:

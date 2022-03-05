@@ -147,8 +147,6 @@ class Render(Resource):
         'interfaceTarget' : True,
         'interfaceQuests' : True,
         'interfaceAnnounce' : True,
-        'interfaceKillCallouts' : True,
-        'interfaceNeutralTimers' : True,
         'healthBarChampions' : True,
         'healthBarStructures' : True,
         'healthBarWards' : True,
@@ -157,7 +155,6 @@ class Render(Resource):
         'environment' : True,
         'characters' : True,
         'particles' : True,
-        'banners' : True,
         'skyboxPath' : '',
         'skyboxRotation' : 0,
         'skyboxRadius' : 0,
@@ -552,59 +549,59 @@ class Sequence(Resource):
 
     def getLabel(self, name):
         if name == 'cameraPosition':
-            return 'Camera Position'
+            return '摄像机坐标'
         if name == 'cameraRotation':
-            return 'Camera Rotation'
+            return '摄像机旋转'
         if name == 'playbackSpeed':
-            return 'Playback Speed'
+            return '回放速度'
         if name == 'fieldOfView':
-            return 'Field Of View'
+            return '视野'
         if name == 'nearClip':
-            return 'Near Clip'
+            return '近距裁剪'
         if name == 'farClip':
-            return 'Far Clip'
+            return '远距裁剪'
         if name == 'navGridOffset':
-            return 'Nav Grid Offset'
+            return '地平线范围'
         if name == 'skyboxRotation':
-            return 'Skybox Rotation'
+            return '水平角度'
         if name == 'skyboxRadius':
-            return 'Skybox Radius'
+            return '半径'
         if name == 'skyboxOffset':
-            return 'Skybox Offset'
+            return '偏移量'
         if name == 'sunDirection':
-            return 'Sun Direction'
+            return '光照方向'
         if name == 'depthFogEnabled':
-            return 'Depth Fog Enable'
+            return '远近雾开启'
         if name == 'depthFogStart':
-            return 'Depth Fog Start'
+            return '起点'
         if name == 'depthFogEnd':
-            return 'Depth Fog End'
+            return '终点'
         if name == 'depthFogIntensity':
-            return 'Depth Fog Intensity'
+            return '浓度'
         if name == 'depthFogColor':
-            return 'Depth Fog Color'
+            return '颜色'
         if name == 'heightFogEnabled':
-            return 'Height Fog Enabled'
+            return '高低雾开启'
         if name == 'heightFogStart':
-            return 'Height Fog Start'
+            return '起点'
         if name == 'heightFogEnd':
-            return 'Height Fog End'
+            return '终点'
         if name == 'heightFogIntensity':
-            return 'Height Fog Intensity'
+            return '浓度'
         if name == 'heightFogColor':
-            return 'Height Fog Color'
+            return '颜色'
         if name == 'depthOfFieldEnabled':
-            return 'DOF Enabled'
+            return '景深开启'
         if name == 'depthOfFieldCircle':
-            return 'DOF Circle'
+            return '程度'
         if name == 'depthOfFieldWidth':
-            return 'DOF Width'
+            return '宽度'
         if name == 'depthOfFieldNear':
-            return 'DOF Near'
+            return '近距'
         if name == 'depthOfFieldMid':
-            return 'DOF Mid'
+            return '中距'
         if name == 'depthOfFieldFar':
-            return 'DOF Far'
+            return '远距'
         return name
 
     def getValue(self, name):
